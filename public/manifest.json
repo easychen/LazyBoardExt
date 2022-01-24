@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,
+
+  "name": "LazyBoardExt",
+  "description": "一个用于给LazyBoard采集数据的Chrome扩展",
+  "version": "1.0",
+
+  "permissions": [
+      "http://*/*","https://*/*",
+      "tabs",
+      "notifications",
+      "alarms"
+  ],
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+  "browser_action": {
+  "default_icon": "logo192.png"
+  }
+  ,
+  "background": 
+  {
+      "scripts": ["background.js"]
+  },
+  "web_accessible_resources": [
+      "logo192.png"
+  ]
+  
+}
