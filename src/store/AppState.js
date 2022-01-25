@@ -45,11 +45,9 @@ class AppState
     @observable fetch_data_items = [];
     constructor()
     {
-        let the_data = kv_get( 'LB_ALL_DATA' );
-        if( !the_data ) the_data = [];
-        this.fetch_data_items = the_data;
+        this.init_data();
 
-        if( chrome && chrome.alarms )
+        if( chrome )
         {
             chrome.alarms.onAlarm.addListener((a)=>
             {
@@ -58,6 +56,13 @@ class AppState
             });
         }
         
+    }
+
+    init_data()
+    {
+        let the_data = kv_get( 'LB_ALL_DATA' );
+        if( !the_data ) the_data = [];
+        this.fetch_data_items = the_data;
     }
 
     async save_data()
@@ -109,6 +114,7 @@ class AppState
     
     async do_fetch( debug = false)
     {
+        this.init_data();
         for( const item of this.fetch_data_items )
         {
             if( parseInt(item.enabled) === 1 )
