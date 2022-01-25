@@ -6,6 +6,8 @@
 
 LazyBoardExt 是一个浏览器插件，可以定时采集特定的数据并更新到[LazyBoard](https://board.level06.com/home)上（当然你也可以提交到其他地方），只要开着浏览器，数据就会持续更新。
 
+![LazyBoardExt](https://user-images.githubusercontent.com/1294760/150903085-296546b6-3cbc-4310-94dd-013f81adf8dc.png)
+
 ## 为什么？
 
 浏览器插件除了可以通过API接口读取数据，还能直接共用登入状态读取没有API接口的网站的数据。
