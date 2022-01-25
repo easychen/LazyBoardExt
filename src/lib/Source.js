@@ -245,16 +245,9 @@ class Source
 
     async customer_fetch_fetch( data )
     {
-        let ret_key = 'LB_CUSTOM_REST';
-        eval("(async () => {" + data.customer_fetch_code + "})()");
-        return window.localStorage.getItem(ret_key) || '-';
-
-        // demo code 
-        /**
-        let result = await fetch( data.customer_fetch_data_url );
-        const m1json = await result.json();
-        window.localStorage.setItem( 'LB_CUSTOM_REST' , m1json.data.sct?.today_income_amount )
-        **/
+        let ret = '-';
+        eval("ret = (async () => {" + data.customer_fetch_code + "})()");
+        return ret;
     }
 }
 
