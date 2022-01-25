@@ -117,10 +117,19 @@ LazyBoardExt 是一个浏览器插件，可以定时采集特定的数据并更�
 ```js
 let result = await fetch( data.customer_fetch_data_url );
 const jsondata = await result.json();
-window.localStorage.setItem( 'LB_CUSTOM_REST' , jsondata.value )
+return jsondata.value
 ```
 
-代码通过将结果写入到键值为 `LB_CUSTOM_REST` 的 localStorage 来传递返回值。
+代码通过return来传递返回值。运行部分的源码如下，可供参考：
+
+```js
+async customer_fetch_fetch( data )
+{
+    let ret = '-';
+    eval("ret = (async () => {" + data.customer_fetch_code + "})()");
+    return ret;
+}
+```
 
 ### 贡献新的数据源
 
