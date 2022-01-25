@@ -2,6 +2,8 @@
 
 ## 是什么？
 
+⚠️ 虽然 LazyBoardExt 是为 LazyBoard 设计，但它是一个通用工具，只需要将`数据回填URL`设置为你自己的接口地址即可。见下文「使用自己的数据回填地址」
+
 LazyBoardExt 是一个浏览器插件，可以定时采集特定的数据并更新到[LazyBoard](https://board.level06.com/home)上（当然你也可以提交到其他地方），只要开着浏览器，数据就会持续更新。
 
 ## 为什么？
@@ -195,4 +197,13 @@ source_types = [
 #### 编译并使用
 
 编写完成后，可以在根目录下运行命令 `yarn build`，完成后通过浏览器载入 `build` 目录作为插件目录即可使用。
+
+## 使用自己的数据回填地址
+
+你也可以使用 LazyBoardExt 来给其他应用采集数据，只需要将「数据回填URL」填写为对应的 URL 即可。注意需要在该URL中添加 `value=new_value` 字段，将会被替换为 `value=采集到的的值`。
+以下实现代码可供参考：
+
+```js
+const set_url = item[item.field+'_source_url'].replace(/value=.+/ig,'value='+encodeURIComponent(value));
+```
 
