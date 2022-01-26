@@ -134,7 +134,7 @@ class AppState
                 if( do_now )
                 {
                     const value = await source[item.field+'_fetch']( item );
-                    const set_url = item[item.field+'_source_url'].replace(/value=.+/ig,'value='+encodeURIComponent(value));
+                    const set_url = item[item.field+'_source_url'].replace(/value=.*/ig,'value='+encodeURIComponent(value));
                     const set_ret = await axios.get( set_url );
                     if( debug )
                     {
