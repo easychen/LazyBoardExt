@@ -16,13 +16,15 @@ LazyBoardExt 是一个浏览器插件，可以定时采集特定的数据并更�
 
 ### 安装插件
 
+#### 从商店安装
+
+[已上架Edge商店](https://microsoftedge.microsoft.com/addons/detail/lazyboardext/lcfhpfmblaafmnimjpbghheedmmpphfa)
+
 #### 从插件代码安装
 
 在项目release中下载代码包，然后在浏览器插件管理中载入「未打包插件」即可使用。
 
-#### 从商店安装
 
-还没有上架
 
 ### 添加数据源
 
